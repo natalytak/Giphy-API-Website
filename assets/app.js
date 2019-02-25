@@ -10,9 +10,8 @@ $(document).ready(function () {
 function getInfo() {
 
     var holiday = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + holiday + "&api_key=IHxamnsXypY3W7r5a34YFktGVcRJwq35&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + holiday + "&api_key=IHxamnsXypY3W7r5a34YFktGVcRJwq35&limit=10";
 
-  
     $.ajax({
       url: queryURL,
       method: "GET"
