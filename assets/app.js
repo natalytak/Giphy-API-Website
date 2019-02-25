@@ -25,43 +25,32 @@ function getInfo() {
 
       if (results[i].rating !== "r" && results[i].rating !== "pg-13"){
         var rating = results[i].rating;
-        console.log(rating);
         var imageStillURL = results[i].images.fixed_height_still.url;
         var imageMoveURL = results[i].images.fixed_height.url;
         var holidayDiv = $('<div>');
+        var rating = $('<p>').html("Rating: " + rating);
         var gifImage = $('<img>').attr('class', 'image').attr('src', imageStillURL);
-        var rating = $('<p>').text("Rating: " + rating);
+        
   
           holidayDiv.append(gifImage);
           holidayDiv.append(rating);
           $('.gifs-here').prepend(holidayDiv);
-
-          gifImage.attr("data-gif", imageMoveURL);
-          // gifImage.attr("class", "gifImage");
-          // gifImage.attr("getIndex", [i]);
-          gifImage.attr("data-img", imageStillURL);
           
           $('body').on('click', '.image', function() {
-            // var imageIndex = $(this).attr("getIndex");
-            var stillURL = $(this).attr("data-gif");
-            var moveURL = $(this).attr("data-img");
-            // console.log(imageIndex);
-            console.log(moveURL);
-
-            if ($(this).attr("src") == moveURL) {
-                $(this).attr("src", stillURL);
+            var source = $(this).attr('src');
+            if($(this).hasClass('moving')) {
+              $(this).removeAttr
+              $(this).attr('src', source.replace(/\.gif/i, "_s.gif"))
+              $(this).removeClass('moving');
+            } else {
+            $(this).addClass('moving');
+            $(this).attr('src', source.replace(/\_s.gif/i, ".gif"))
             }
-            else if ($(this).attr("src") == stillURL) {
-                $(this).attr("src", moveURL);
-            };
-          
           })
+        }
       }
-}
-
     })
   }
-  
 
     function makeButtons() {
         $("#buttons").empty();
@@ -84,6 +73,4 @@ function getInfo() {
       $(document).on("click", ".holidayClass", getInfo);
         makeButtons();
      
-
-
 });
