@@ -5,7 +5,7 @@ $(document).ready(function () {
     var holidayDiv;
     var gifImage;
     var rating;
-    var gifMovingImage;
+    // var gifMovingImage;
 
 function getInfo() {
 
