@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+  }
+body {
+    background-image: url("../images/darkness.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+
+#user-input {
+    background-image: linear-gradient(to top, rgb(166, 124, 0), rgb(252, 221, 133), rgb(166, 124, 0));
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+#buttons {
+    text-align: center;
+}
+
+button {
+    background-color: rgb(219,234,173);
+    padding: 5px;
+    margin: 5px;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+button:focus {
+    outline: rgb(255,220,115) auto 5px; 
+}
+
+#add-holiday {
+    background-color: rgb(219,234,173);
+    padding: 5px 20px;
+    margin: 5px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#header {
+    margin: 15px;
+}
+
+.gifs-here {
+    position: relative;
+    margin-top: 25px;
+}
+
+img {
+    float: left;
+    margin: 10px;
+    width: 30%;
+    height: 200px;
+    border: 3px solid rgb(255,220,115);
+}
+
+img:hover {
+    opacity: 0.8;
+}
+
+p {
+    display: block;
+    float: left;
+    color: rgb(255,220,115)
+}
