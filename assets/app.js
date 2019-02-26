@@ -5,13 +5,14 @@ $(document).ready(function () {
     var holidayDiv;
     var gifImage;
     var rating;
-    // var gifMovingImage;
+    var gifMovingImage;
 
 function getInfo() {
 
     var holiday = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + holiday + "&api_key=IHxamnsXypY3W7r5a34YFktGVcRJwq35&limit=10";
 
+  
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -26,7 +27,7 @@ function getInfo() {
         var rating = results[i].rating;
         var imageStillURL = results[i].images.fixed_height_still.url;
         var imageMoveURL = results[i].images.fixed_height.url;
-        var holidayDiv = $('<div>');
+        var holidayDiv = $('<div class="gifs">');
         var rating = $('<p>').html("Rating: " + rating);
         var gifImage = $('<img>').attr('class', 'image').attr('src', imageStillURL);
         
@@ -38,7 +39,6 @@ function getInfo() {
           $('body').on('click', '.image', function() {
             var source = $(this).attr('src');
             if($(this).hasClass('moving')) {
-              $(this).removeAttr
               $(this).attr('src', source.replace(/\.gif/i, "_s.gif"))
               $(this).removeClass('moving');
             } else {
