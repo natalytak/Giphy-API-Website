@@ -7,4 +7,4 @@ This is an app I developed that uses Giphy API to assess 10 most popular holiday
 - JavaScript
 - jQuery
 
-![Giftastic](https://natalytak.github.com/Giphy-API-Website/images/giftastic.jpg)
+![Giftastic](./images/giftastic.jpg)
