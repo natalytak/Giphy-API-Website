@@ -18,7 +18,7 @@ function getInfo() {
       method: "GET"
     }).then(function(response) {
         $(".gifs-here").empty();
-        console.log(response);
+       
         var results = response.data;
 
     for (var i = 0; i < results.length; i++) {
@@ -36,8 +36,9 @@ function getInfo() {
           holidayDiv.append(rating);
           $('.gifs-here').prepend(holidayDiv);
           
-          $('body').on('click', '.image', function() {
+          $(gifImage).on('click', function() {
             var source = $(this).attr('src');
+            console.log(source);
             if($(this).hasClass('moving')) {
               $(this).attr('src', source.replace(/\.gif/i, "_s.gif"))
               $(this).removeClass('moving');
